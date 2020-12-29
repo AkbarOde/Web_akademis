@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font: 16px/1.5 "Lato", sans-serif;
+}
+
+.logo{
+	width: 130px;
+}
+
+ul {
+  list-style: none;
+}
+.container{
+	width: 100%;
+}
+/* Header Style */
+.page-header {
+  position: fixed;
+  margin :0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  padding-top: 20px;
+  width: 15%;  
+  background: #5564D6;
+}
+
+.page-header a, .dropdown-btn {
+  padding: 8px 0px 8px 10px;
+  text-decoration: none;
+  width: 100%;
+  font-size: 16px;
+  color: #FEFFFF;
+  display: block;
+  border: none;
+  background: none;
+  transition: 0.3s;
+  outline: none;  
+  text-align: left;
+}
+
+.page-header a:hover, .dropdown-btn:hover {
+  background-color: #46A2CF;
+  color: #FEFEFF;
+}
+
+.active {
+  background-color: #46A2CF;
+  color: #FFFF;
+}
+
+.page-logo{
+	display: table;
+  	margin: 0 auto;	
+  	margin-bottom: 25px;
+}
+
+.fa-tachometer{
+	float-left;
+	padding-right: 10px;
+}
+
+/* dropdown */
+.dropdown-container {
+  display: none;
+  background-color: #5564D6;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Conten Style */
+.page-content{
+	margin: 0;	
+	background-color: #f0f1f6;
+	height: 100%;
+	width: 85%;	
+	position: absolute;	
+	right: 0;
+}
+
+.icon{
+	width: 40px;
+	margin-left: 10px;
+}
+
+.content-header{
+	width: 100%;
+	background-color: #FFFFFF;	
+	display: flex;
+  	align-items: center;
+  	padding: 15px 15px 15px 15px;
+}
+
+.admin-icon{
+	position: absolute;
+	display: flex;
+  	align-items: center;
+  	right: 0;
+}
+
+.content{
+	width: 100%;	
+		
+	padding: 20px 20px 20px 20px;
+}
+
+
