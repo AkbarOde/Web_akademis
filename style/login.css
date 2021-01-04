@@ -24,11 +24,20 @@ html {
 	width: 150px;	
 }
 
+.admin-icon{
+    display: table;
+    margin: 0 auto; 
+    border-radius: 50%;
+    background-color: white; 
+}
 .user-icon{		
 	  display: table;
   	margin: 0 auto;	
-  	margin-top: -80px;
-	
+  	margin-top: -80px;    
+}
+
+.admin-login-form{
+  margin-top: 20px;
 }
 
 .login-form{
