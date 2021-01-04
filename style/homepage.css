@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+.link{
+  color: black;  
+}
+
 body {
   font: 16px/1.5 "Lato", sans-serif;
 }
@@ -50,7 +54,7 @@ ul {
 }
 
 .page-header a:hover, .dropdown-btn:hover {
-  background-color: #46A2CF;
+  background-color: #1528B7;
   color: #FEFEFF;
 }
 
@@ -109,8 +113,10 @@ ul {
 .admin-icon{
 	position: absolute;
 	display: flex;
-  	align-items: center;
-  	right: 0;
+  align-items: center;
+  right: 0;
+  margin-right: 20px;
+  
 }
 
 .content{
@@ -118,5 +124,4 @@ ul {
 		
 	padding: 20px 20px 20px 20px;
 }
-
 

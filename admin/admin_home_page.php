@@ -11,8 +11,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../style/homepage.css">
-		<link rel="stylesheet" href="../style/dosen.css">
-		<link rel="stylesheet" href="../style/dashboard.css">
+		<link rel="stylesheet" href="../style/tabel.css">
+		<link rel="stylesheet" href="../style/dashboard.css">		
+		<link rel="stylesheet" href="../style/modal.css">
+
+		<!-- Datatables -->		
+		<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+		
+		<!-- <link href="../style/datatables.min.css" rel="stylesheet" /> -->
+		<script src="../js/jquery.min.js" type="text/javascript"></script>
+		<script src="../js/datatables.min.js"></script>
+		<!-- <script src="../js/datatables.min.js"></script>		 -->
 
 		<title>Admin</title>						
 	</head>
@@ -22,25 +31,23 @@
 			<div class="page-logo">
 				<img class="logo" src="../assets/gadget.png"/>
 			</div>
-			<a href="?page=dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>		
-			<button class="dropdown-btn">Dosen
-    			<i class="fa fa-caret-down"></i>
-  			</button>
-			<div class="dropdown-container">
-			    <a href="?page=dosen">Data Dosen</a>
-			    <a href="#">Input Data</a>
-  			</div>
-
-	  		<a href="?page=mahasiswa" >Mahasiswa</a>
-	  		<a href="?page=ruangan" >Ruangan</a>
-	  		<a href="?page=nilai" >Nilai</a>
+			<a href="?page=dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
+	  		<a href="?page=dosen" >Daftar Dosen</a>
+	  		<a href="?page=mahasiswa">Daftar Mahasiswa</a>
+	  		<a href="?page=ruangan">Daftar Ruangan</a>
+	  		<a href="?page=nilai">Daftar Nilai</a>
+	  		<a href="?page=matkul">Daftar Mata Kuliah</a>	  		
+	  		<a href="?page=jadwal_mengajar"></i>Daftar Jadwal</a>
 		</div>	
 		<div class="page-content">
 			<div class="content-header">
-				<span>Welcome to Management System</span>
+				<span>Administrator</span>
+				<img src="../assets/user.png" class="icon" />
 				<div class="admin-icon">
-					<span>Hello admin</span>
-					<img src="../assets/user.png" class="icon" />
+				<a class="link" href="logout.php">										
+					<i class="fa fa-sign-out" aria-hidden="true"></i>
+					<span>Logout</span>					
+				</a>
 				</div>			
 			</div>
 
@@ -54,34 +61,88 @@
 							break;
 						case "dosen":
 							include "dosen_page.php";
-							break;
+							break;						
 						case "mahasiswa":
 							include "mahasiswa_page.php";
 							break;
-						
+						case "matkul":
+							include "matkul_page.php";
+							break;
+						case "ruangan":
+							include "ruangan_page.php";
+							break;	
+						case "nilai":
+							include "nilai/nilai_page.php";
+							break;											
+						case "jadwal_mengajar":
+							include "jadwal/jadwal_mengajar_page.php";
+							break;						
+						case "jadwal_input":
+							include "jadwal/jadwal_mengajar_input.php";
+							break;
 					}
 				}
 			?>
-			</div>
-		
+			</div>		
 		</div>
-	</div>		
-	<script>
-		/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-		var dropdown = document.getElementsByClassName("dropdown-btn");
-		var i;
+	</div>	
 
-		for (i = 0; i < dropdown.length; i++) {
-		  dropdown[i].addEventListener("click", function() {
-		  this.classList.toggle("active");
-		  var dropdownContent = this.nextElementSibling;
-		  if (dropdownContent.style.display === "block") {
-		  dropdownContent.style.display = "none";
-		  } else {
-		  dropdownContent.style.display = "block";
-		  }
-		  });
-		}
+	
+	<script>		
+		// In your Javascript (external .js resource or <script> tag)
+		$(document).ready( function () {
+    		$('#list-data').DataTable();
+		} );
+		$('#list-data').dataTable({
+  			aaSorting: []
+		})		
+
+		// Untuk komfirmasi delete data
+		function hapusData(id, identifier){
+			console.log(id);
+	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
+	        	switch(identifier) {
+				  case 1:
+				    window.location.href = 'dosen_delete.php?id=' + id;
+				    break;
+				  case 2:
+				    window.location.href = 'matkul_delete.php?id=' + id;
+				    break;
+				  case 3:
+				    window.location.href = 'ruangan_delete.php?id=' + id;
+				    break;		
+				  case 4:
+				    window.location.href = 'jadwal/jadwal_mengajar_delete.php?id=' + id;
+				    break;			  
+				}	          
+	        }
+    	}
+    	
+    	function hapusDataJadwal(id_jadwal, id_dosen){    
+	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
+	          window.location.href = 'jadwal/jadwal_mengajar_delete.php?id=' +id_jadwal+'&dosen='+id_dosen;
+	        }
+      	}
+
+    	function hapusDataNilai(nim, id_matkul, tingkat){
+    		console.log(nim);
+	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
+	          window.location.href = 'nilai/nilai_delete.php?nim='+nim+'&id='+id_matkul+'&tingkat='+tingkat;
+	        }
+      	}
+        function hapusDataMhs(nim){
+	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
+	          window.location.href = 'mahasiswa_delete.php?nim=' + nim;
+	        }
+      	}
+
+      	function show_form(id){
+      		var form = document.getElementById(id);
+
+      		form.style.display = "block";
+      	}
+
 	</script>
+	<script type="text/javascript" src="../js/modal.js"></script>
 	</body>
 </html>
