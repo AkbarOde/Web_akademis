@@ -17,10 +17,10 @@
 	</head>
 	<body>						
 		<div class="login-container">
-			<div class="user-icon">
-				<img src="../assets/user.png" id="icon" alt="User Icon"/>
+			<div class="admin-icon">
+				<img src="../assets/admin2.png" id="icon" alt="User Icon"/>
 			</div>
-			<div class="login-form">
+			<div class="admin-login-form">
 				<form name="login" method="post" action="adminValidate.php">
 					<div>							
 						<input type="text" name="username" placeholder="Username" required>
