@@ -23,7 +23,7 @@
 			<!-- Select Data Dosen -->
 			<?php
 			include "../db_connection.php";
-
+			
 			$sql = "SELECT * from dosen";
 			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {				
@@ -56,6 +56,7 @@
 				<th><h5>Dosen</h5></th>
 				<th><h5>Mata Kuliah</h5></th>
 				<th><h5>Hari</h5></th>
+				<th><h5>Waktu</h5></th>
 				<th><h5>Ruangan</h5></th>				
 				<th><h5>Update</h5></th>
 				<th><h5>Delete</h5></th>			
@@ -89,6 +90,7 @@
 		        	<td><?php echo $row["Nama_Dosen"];?></td>
 		        	<td><?php echo $row["Nama_Matkul"];?></td>
 		        	<td><?php echo $row["Hari"];?></td>
+		        	<td><?php echo $row["Jam_Masuk"]."-".$row["Jam_Keluar"];?></td>
 		        	<td><?php echo $row["Nama_Ruangan"];?></td>
 
 		        	
@@ -139,7 +141,7 @@
 									<option value="Sabtu"></option>									
 								</datalist>
 								<!-- Ruangan -->
-								<label for="fdosen">Ruangan: <input list="ruangan" name="ruangan" type="text" value="<?php echo $row['ID_Ruangan']?>">
+								<label for="fdosen">Ruangan <input list="ruangan" name="ruangan" type="text" value="<?php echo $row['ID_Ruangan']?>">
 								</label>
 								<datalist id="ruangan">
 									<!-- Select Data Ruangan -->
@@ -156,7 +158,11 @@
 								    	}
 									} 												
 									?>			 
-								</datalist>									
+								</datalist>			
+								<!-- Jam -->
+								<label for="fjam">Jam</label>
+								<br>
+								<input type="time" name="j_masuk" step="1" value="<?php echo $row['Jam_Masuk']?>"> - <input type="time" name="j_keluar" step="1" value="<?php echo $row['Jam_Keluar']?>">
 								<input type="submit" value="Update">
 							</form>
 					    </div>    

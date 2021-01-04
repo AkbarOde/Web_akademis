@@ -3,13 +3,15 @@
 	$old_id_dosen = $_POST['old_id_dosen'];	
 	$ruangan = $_POST['ruangan'];	
 	$hari = $_POST['hari'];	
+	$j_masuk = $_POST['j_masuk'];	
+	$j_keluar = $_POST['j_keluar'];
 	
 	echo $old_id;
 	echo $ruangan;
 	echo $hari;
 	include "../../db_connection.php";
 
-	$query = "UPDATE jadwal SET Kode_Ruangan='$ruangan', Hari='$hari' WHERE ID_Jadwal='$old_id'";	
+	$query = "UPDATE jadwal SET Kode_Ruangan='$ruangan', Hari='$hari', Jam_Masuk ='$j_masuk', Jam_Keluar ='$j_keluar' WHERE ID_Jadwal='$old_id'";	
 
 	$res = $conn->query($query);
 	mysqli_close($conn);
