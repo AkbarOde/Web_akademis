@@ -1,7 +1,9 @@
 <!-- Check Status tambah data -->
 <?php
-	include "../session_check.php";
-	
+	if(!isset($_GET['page'])){
+		include "../session_check.php";
+	}	
+
 	if(isset($_GET['status'])){
 		echo '<script>alert("Input Data Gagal")</script>'; 
 	}

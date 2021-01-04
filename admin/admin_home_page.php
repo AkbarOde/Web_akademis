@@ -42,7 +42,7 @@
 		<div class="page-content">
 			<div class="content-header">
 				<span>Administrator</span>
-				<img src="../assets/user.png" class="icon" />
+				<img src="../assets/admin2.png" class="icon" />
 				<div class="admin-icon">
 				<a class="link" href="logout.php">										
 					<i class="fa fa-sign-out" aria-hidden="true"></i>
