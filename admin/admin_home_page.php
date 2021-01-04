@@ -60,7 +60,7 @@
 							include "dashboard.php";
 							break;
 						case "dosen":
-							include "dosen_page.php";
+							include "dosen/dosen_page.php";
 							break;						
 						case "mahasiswa":
 							include "mahasiswa_page.php";
@@ -103,7 +103,7 @@
 	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
 	        	switch(identifier) {
 				  case 1:
-				    window.location.href = 'dosen_delete.php?id=' + id;
+				    window.location.href = 'dosen/dosen_delete.php?id=' + id;
 				    break;
 				  case 2:
 				    window.location.href = 'matkul_delete.php?id=' + id;
