@@ -21,9 +21,9 @@
 .data-user{	
 	width: 70%;
 	display: table;
+	border-radius: 10px;
 	margin: 0 auto;
 }
-
 
 .fa-user-circle{
 	float: left;	
@@ -31,4 +31,28 @@
 
 .jumlah-dosen{
 	font-size: 100px;
+}
+.info{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 120px;
+}
+
+.ipk{	
+	width: 47%;	
+	background-color: green;
+	color: white;
+	float: left;
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;	
+}
+
+.sks{	
+	width: 47%;
+	background-color: #FFFF;
+	float: right;
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;	
 }
