@@ -66,7 +66,7 @@
 							include "mahasiswa/mahasiswa_page.php";
 							break;
 						case "matkul":
-							include "matkul_page.php";
+							include "matkul/matkul_page.php";
 							break;
 						case "ruangan":
 							include "ruangan_page.php";
@@ -106,7 +106,7 @@
 				    window.location.href = 'dosen/dosen_delete.php?id=' + id;
 				    break;
 				  case 2:
-				    window.location.href = 'matkul_delete.php?id=' + id;
+				    window.location.href = 'matkul/matkul_delete.php?id=' + id;
 				    break;
 				  case 3:
 				    window.location.href = 'ruangan_delete.php?id=' + id;

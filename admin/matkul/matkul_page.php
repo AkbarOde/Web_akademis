@@ -69,7 +69,7 @@
 					      <hr>
 					    </div>
 					    <div class="modal-body">
-					    	<form name="input" method="post" action="matkul_update.php">
+					    	<form name="input" method="post" action="matkul/matkul_update.php">
 						      	<input type="hidden" name="old_id" value="<?php echo $row['ID_Matkul']?>">
 								<label for="fid">ID Matkul</label>
 								<input type="text" id="fid" name="id" value="<?php echo $row['ID_Matkul']?>" maxlength="6" required>
@@ -107,7 +107,7 @@
       <hr>
     </div>
     <div class="modal-body">
-      <form name="input" method="post" action="matkul_input.php">
+      <form name="input" method="post" action="matkul/matkul_input.php">
       	<label for="fid">ID Matkul</label>
 		<input type="text" id="fid" name="id" placeholder="ID Matkul" maxlength="6" required>
 		<label for="fnama">Nama</label>

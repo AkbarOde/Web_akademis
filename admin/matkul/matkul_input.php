@@ -4,7 +4,7 @@
 	$sks = $_POST['sks'];	
 	$semester = $_POST['semester'];	
 	
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "INSERT INTO mata_kuliah VALUES ('$id', '$nama', '$sks', '$semester')";
 
@@ -12,9 +12,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=matkul");		
+		header("location:../admin_home_page.php?page=matkul");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=matkul&status=error"); 		
+		header("location:../admin_home_page.php?page=matkul&status=error"); 		
 	}	
 ?>

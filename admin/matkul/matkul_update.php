@@ -6,7 +6,7 @@
 	$semester = $_POST['semester'];	
 	
 	echo $old_id;
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "UPDATE mata_kuliah SET ID_Matkul='$id', Nama_Matkul='$nama', SKS_Matkul='$sks', Semester = '$semester' WHERE ID_Matkul='$old_id'";	
 
@@ -14,9 +14,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=matkul");		
+		header("location:../admin_home_page.php?page=matkul");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=matkul&status=error"); 		
+		header("location:../admin_home_page.php?page=matkul&status=error"); 		
 	}	
 ?>
