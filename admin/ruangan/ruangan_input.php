@@ -2,7 +2,7 @@
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];	
 	
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "INSERT INTO ruangan VALUES ('$id', '$nama')";
 
@@ -10,9 +10,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=ruangan");		
+		header("location:../admin_home_page.php?page=ruangan");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=ruangan&status=error"); 		
+		header("location:../admin_home_page.php?page=ruangan&status=error"); 		
 	}	
 ?>

@@ -65,7 +65,7 @@
 					      <hr>
 					    </div>
 					    <div class="modal-body">
-					    	<form name="input" method="post" action="ruangan_update.php">
+					    	<form name="input" method="post" action="ruangan/ruangan_update.php">
 						      	<input type="hidden" name="old_id" value="<?php echo $row['ID_Ruangan']?>">
 								<label for="fid">ID Dosen</label>
 								<input type="text" id="fid" name="id" value="<?php echo $row['ID_Ruangan']?>" maxlength="7" required>
@@ -99,7 +99,7 @@
       <hr>
     </div>
     <div class="modal-body">
-      <form name="input" method="post" action="ruangan_input.php">
+      <form name="input" method="post" action="ruangan/ruangan_input.php">
 		<label for="fid">ID Ruangan</label>
 		<input type="text" id="fid" name="id" placeholder="ID Ruangan" maxlength="7" required>
 		<label for="fnama">Nama</label>

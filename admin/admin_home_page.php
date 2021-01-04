@@ -69,7 +69,7 @@
 							include "matkul/matkul_page.php";
 							break;
 						case "ruangan":
-							include "ruangan_page.php";
+							include "ruangan/ruangan_page.php";
 							break;	
 						case "nilai":
 							include "nilai/nilai_page.php";
@@ -109,7 +109,7 @@
 				    window.location.href = 'matkul/matkul_delete.php?id=' + id;
 				    break;
 				  case 3:
-				    window.location.href = 'ruangan_delete.php?id=' + id;
+				    window.location.href = 'ruangan/ruangan_delete.php?id=' + id;
 				    break;		
 				  case 4:
 				    window.location.href = 'jadwal/jadwal_mengajar_delete.php?id=' + id;

@@ -4,7 +4,7 @@
 	$nama = $_POST['nama'];	
 	
 	echo $old_id;
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "UPDATE ruangan SET ID_Ruangan='$id', Nama_Ruangan='$nama' WHERE ID_Ruangan='$old_id'";	
 
@@ -12,9 +12,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=ruangan");		
+		header("location:../admin_home_page.php?page=ruangan");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=ruangan&status=error"); 		
+		header("location:../admin_home_page.php?page=ruangan&status=error"); 		
 	}	
 ?>
