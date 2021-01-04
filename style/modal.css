@@ -77,6 +77,14 @@ input[type=text], input[type=password], input[type=number] {
   border: 3px solid #ccc;    
   outline: none;
 }
+input[type=time]{
+  width: 48%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;    
+  outline: none;
+}
 
 input[type=text]:focus,  input[type=password]:focus {
   border: 3px solid green;
