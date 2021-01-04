@@ -63,7 +63,7 @@
 							include "dosen/dosen_page.php";
 							break;						
 						case "mahasiswa":
-							include "mahasiswa_page.php";
+							include "mahasiswa/mahasiswa_page.php";
 							break;
 						case "matkul":
 							include "matkul_page.php";
@@ -132,7 +132,7 @@
       	}
         function hapusDataMhs(nim){
 	        if (confirm("Apakah anda yakin akan menghapus data ini?")){
-	          window.location.href = 'mahasiswa_delete.php?nim=' + nim;
+	          window.location.href = 'mahasiswa/mahasiswa_delete.php?nim=' + nim;
 	        }
       	}
 

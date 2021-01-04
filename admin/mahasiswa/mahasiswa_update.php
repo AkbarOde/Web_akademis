@@ -5,7 +5,7 @@
 	$alamat = $_POST['alamat'];	
 	$tingkat = $_POST['tingkat'];	
 	
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "UPDATE mahasiswa SET NIM='$nim', Nama_Mhs='$nama', Tingkat='$tingkat', Alamat='$alamat' WHERE NIM='$old_nim'";	
 
@@ -13,9 +13,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=mahasiswa");		
+		header("location:../admin_home_page.php?page=mahasiswa");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=mahasiswa&status=error"); 		
+		header("location:../admin_home_page.php?page=mahasiswa&status=error"); 		
 	}	
 ?>

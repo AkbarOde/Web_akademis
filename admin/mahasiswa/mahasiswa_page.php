@@ -67,7 +67,7 @@
 					      <hr>
 					    </div>
 					    <div class="modal-body">
-					    	<form name="input" method="post" action="mahasiswa_update.php">
+					    	<form name="input" method="post" action="mahasiswa/mahasiswa_update.php">
 						      	<input type="hidden" name="old_nim" value="<?php echo $row['NIM']?>">
 								<label for="fnim">NIM</label>
 								<input type="text" id="fnim" name="nim" value="<?php echo $row['NIM']?>" maxlength="9" required>
@@ -107,7 +107,7 @@
       <hr>
     </div>
     <div class="modal-body">
-      <form name="input" method="post" action="mahasiswa_input.php">
+      <form name="input" method="post" action="mahasiswa/mahasiswa_input.php">
 		<label for="fnim">NIM</label>
 		<input type="text" id="fnim" name="nim" placeholder="NIM" maxlength="9" required>
 		<label for="fnama">Nama</label>

@@ -5,7 +5,7 @@
 	$alamat = $_POST['alamat'];
 	$password = $_POST['password'];
 	
-	include "../db_connection.php";
+	include "../../db_connection.php";
 
 	$query = "INSERT INTO mahasiswa VALUES ('$nim', '$nama', '$tingkat', '$password','$alamat')";
 
@@ -13,9 +13,9 @@
 	mysqli_close($conn);
 	
 	if($res){
-		header("location:admin_home_page.php?page=mahasiswa");		
+		header("location:../admin_home_page.php?page=mahasiswa");		
 	}
 	else{		
-		header("location:admin_home_page.php?page=mahasiswa&status=error"); 		
+		header("location:../admin_home_page.php?page=mahasiswa&status=error"); 		
 	}	
 ?>
