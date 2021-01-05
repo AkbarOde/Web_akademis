@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 a {
-  text-decoration: none;
+  text-decoration: none;  
 }
 
 .link{
@@ -18,7 +18,7 @@ body {
 }
 
 .logo{
-	width: 130px;
+	width: 170px;
 }
 
 ul {
@@ -33,18 +33,19 @@ ul {
   margin :0;
   padding: 0;
   height: 100%;
-  overflow: auto;
-  padding-top: 20px;
+  overflow: auto;  
   width: 15%;  
-  background: #5564D6;
+  /*background: #5564D6;*/
+  background-image: linear-gradient(#94D4F3, #5564D6) !important;
 }
 
 .page-header a, .dropdown-btn {
   padding: 8px 0px 8px 10px;
   text-decoration: none;
   width: 100%;
-  font-size: 16px;
-  color: #FEFFFF;
+  /*font-size: 16px;*/
+  font-size: 14px;
+  color: #FFFEFE;
   display: block;
   border: none;
   background: none;
@@ -54,7 +55,7 @@ ul {
 }
 
 .page-header a:hover, .dropdown-btn:hover {
-  background-color: #1528B7;
+  background-color: #7784E9;
   color: #FEFEFF;
 }
 
@@ -66,10 +67,19 @@ ul {
 .page-logo{
 	display: table;
   	margin: 0 auto;	
-  	margin-bottom: 25px;
+  	margin-bottom: 20px;
 }
 
-.fa-tachometer{
+.menu-heading{
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 12px;
+  margin-top: 12px;
+  margin-left: 12px;
+  color: #FFFEFE;
+}
+
+.fa-icon{
 	float-left;
 	padding-right: 10px;
 }
@@ -90,7 +100,7 @@ ul {
 /* Conten Style */
 .page-content{
 	margin: 0;	
-	background-color: #f0f1f6;
+	background-color: #CAD0FC;
 	height: 100%;
 	width: 85%;	
 	position: absolute;	
@@ -104,10 +114,10 @@ ul {
 
 .content-header{
 	width: 100%;
-	background-color: #FFFFFF;	
+	background-color: #FFFFFF;	  
 	display: flex;
-  	align-items: center;
-  	padding: 15px 15px 15px 15px;
+  align-items: center;
+  padding: 15px 15px 15px 15px;
 }
 
 .admin-icon{
