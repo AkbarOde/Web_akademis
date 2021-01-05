@@ -44,11 +44,11 @@
 	</div>
 	<div class="data-result">
 		<div class="button-container">
-			<a href="admin_home_page.php?page=jadwal_input">
-			<button class="button-input" >
+			<!-- <a href="admin_home_page.php?page=jadwal_input"> -->
+			<button class="button-input" id="myBtn" onclick="show_modal(0)" >
 			<i class="fa fa-plus" aria-hidden="true"></i> Tambah Data
 			</button>
-			</a>
+			<!-- </a> -->
 		</div>
 	<table id="list-data" class="display">	
 		<thead>
@@ -178,4 +178,96 @@
 	</table>
 	</div>
 	<div style="clear: both;"></div>
+</div>
+
+<!-- Get Data Dosen, Mata Kuliah Ruangan -->
+<?php
+	include "../db_connection.php";
+	// Dosen
+	$sql_dosen = "SELECT * from dosen"; 
+	$dosen = mysqli_query($conn, $sql_dosen);
+	// Mata Kuliah
+	$sql_matkul = "SELECT * from mata_kuliah";
+	$matkul = mysqli_query($conn, $sql_matkul);
+	// Ruangan
+	$sql_r = "SELECT * from ruangan";
+	$ruangan = mysqli_query($conn, $sql_r);
+?>
+
+<!-- Modal Input Data -->
+<div id="myModal0" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" id="close0">&times;</span>
+      <h2>Input Jadwal Mengajar</h2>
+      <hr>
+    </div>
+    <div class="modal-body">
+     <form name="input" method="post" action="jadwal/jadwal_m_input.php">
+		<!-- Data Dosen -->
+      	<label for="fdosen">Dosen: <input list="dosen" name="dosen" type="text">
+		</label>
+		<datalist id="dosen">
+		<!-- Select Data Dosen -->
+		<?php
+		while($l_dosen = mysqli_fetch_assoc($dosen)) {		    	
+		?>
+			<option value="<?php echo $l_dosen['ID_Dosen']?>">
+				<?php echo $l_dosen['Nama_Dosen']?>
+			</option>
+		<?php					    	
+		} 						
+		?>			 
+		</datalist>	
+		<!-- Data Mata Kuliah -->
+		<label for="fmatkul">Mata Kuliah: <input list="matkul" name="matkul" type="text">
+		</label>
+		<datalist id="matkul">
+		<!-- Select Data Mata Kuliah -->
+		<?php			
+		while($l_matkul = mysqli_fetch_assoc($matkul)) {
+		?>
+			<option value="<?php echo $l_matkul['ID_Matkul']?>">
+				<?php echo $l_matkul['Nama_Matkul']?>
+			</option>
+		<?php					    	
+		} 						
+		?>			 
+		</datalist>
+		<!-- Data Mata Ruangan -->
+		<label for="fruangan">Ruangan: <input list="ruangan" name="ruangan" type="text">
+		</label>
+		<datalist id="ruangan">
+		<!-- Select Data Ruangan -->
+		<?php						
+	    while($l_r = mysqli_fetch_assoc($ruangan)) {		    	
+		?>
+			<option value="<?php echo $l_r['ID_Ruangan']?>">
+				<?php echo $l_r['Nama_Ruangan']?>
+			</option>
+		<?php					    	
+		} 						
+		?>			 
+		</datalist>		
+
+		<!-- Data Hari -->
+		<label for="fhari">Hari: <input list="hari" name="hari" type="text">
+		</label>
+		<datalist id="hari">			
+			<option value="Senin"></option>
+			<option value="Selasa"></option>
+			<option value="Rabu"></option>
+			<option value="Kamis"></option>
+			<option value="Jumat"></option>
+			<option value="Sabtu"></option>					
+		</datalist>
+		<!-- Jam -->
+		<label for="fjam">Jam</label>
+		<br>
+		<input type="time" name="j_masuk" step="1"> - <input type="time" name="j_keluar" step="1">
+		<input type="submit" value="Input">
+	</form>
+    </div>    
+  </div>
 </div>

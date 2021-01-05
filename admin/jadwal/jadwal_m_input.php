@@ -3,31 +3,37 @@
 	$id_matkul = $_POST['matkul'];	
 	$id_ruangan = $_POST['ruangan'];	
 	$hari = $_POST['hari'];	
+	$j_masuk = $_POST['j_masuk'];	
+	$j_keluar = $_POST['j_keluar'];
 	
-	include "../../db_connection.php";
+	echo $j_masuk;
+	echo $j_keluar;
 
-	$cek_query = "SELECT * FROM mengajar WHERE Kode_Matkul ='$id_matkul' AND Kode_Dosen = '$id_dosen'";
-	$result = mysqli_query($conn, $cek_query);
-	
-	if (mysqli_num_rows($result) == 0) {				
-		$query = "INSERT INTO mengajar VALUES ('','$id_dosen', '$id_matkul')";
-		$res = $conn->query($query);
+	$error = 1;
+	if($j_masuk < $j_keluar){
+		include "../../db_connection.php";
 
-		$query_jadwal = "INSERT INTO jadwal VALUES ('','$id_ruangan', '$id_matkul', '$hari','')";
-		$res_jadwal = $conn->query($query_jadwal);
-		mysqli_close($conn);
-	
-		if($res_jadwal AND $res){
-			echo "Berhasil";
-			header("location:../admin_home_page.php?page=jadwal_mengajar");		
-		}
-		else{		
-			echo "gagal";
-			header("location:../admin_home_page.php?page=jadwal_mengajar&status=error"); 		
-		}	
+		$cek_query = "SELECT * FROM mengajar WHERE Kode_Matkul ='$id_matkul' AND Kode_Dosen = '$id_dosen'";
+		$result = mysqli_query($conn, $cek_query);
+		
+		if (mysqli_num_rows($result) == 0) {				
+			$query = "INSERT INTO mengajar VALUES ('','$id_dosen', '$id_matkul')";
+			$res = $conn->query($query);
+
+			$query_jadwal = "INSERT INTO jadwal VALUES ('','$id_ruangan', '$id_matkul', '$hari', '$j_masuk', '$j_keluar')";
+			$res_jadwal = $conn->query($query_jadwal);
+			mysqli_close($conn);
+			
+			echo $res;
+			echo $res_jadwal;
+			
+			if($res_jadwal AND $res){
+				$error = 0;
+				header("location:../admin_home_page.php?page=jadwal_mengajar");		
+			}				
+		}				
 	}	
-	else{		
-			header("location:../admin_home_page.php?page=jadwal_mengajar&status=error"); 		
-	}		    				
+	if($error == 1)
+		header("location:../admin_home_page.php?page=jadwal_mengajar&status=error"); 		
 	
 ?>
