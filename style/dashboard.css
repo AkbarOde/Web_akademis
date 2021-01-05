@@ -1,44 +1,56 @@
-.d-dosen{
-	width: 40%;
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+.item{	
+	margin-top: 50px;
+	width: 20%;
 	background-color: #FFFF;
+	margin-left: 4%;
 	float: left;
 	padding: 10px 10px 10px 10px;
-}
-
-.d-mahasiswa{
-	width: 40%;
-	background-color: #FFFF;
-	float: right;
-	padding: 10px 10px 10px 10px;
+	position: relative;		
 }
 
 .icon-user{	
-	width: 30%;
-	float: left;
-	margin-top: 40px;
-}
-
-.data-user{	
-	width: 70%;
 	display: table;
-	border-radius: 10px;
+	border-radius: 50%;	
+	margin: 0 auto;	
+	margin-top: -40px;
+	/*background-color: #FFFFFF;*/
+}
+
+.data-user{		
+	font: 16px/1.5 "Lato", sans-serif;
+	font-size: 20px;
+	display: table;	
 	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
 }
 
-.fa-user-circle{
-	float: left;	
+.data{
+	font-size: 60px;
 }
 
-.jumlah-dosen{
-	font-size: 100px;
+.dosen{
+	background-image: linear-gradient(#CAD0FC, #46A2CF) !important;
 }
+.mahasiswa{
+	background-image: linear-gradient(#CAD0FC, #7784E9) !important;
+}
+.matkul{
+	background-image: linear-gradient(#CAD0FC, #FFBC70) !important;
+}
+.ruangan{
+	background-image: linear-gradient(#CAD0FC, #FFD770) !important;	
+}
+/* Dashboard Mahasiswa */
 .info{
 	width: 100%;
 	height: 100%;
 	margin-bottom: 120px;
 }
 
-.ipk{	
+.left-item{	
 	width: 47%;	
 	background-color: #7784E9;
 	color: white;
@@ -46,14 +58,16 @@
 	font-size: 50px;
 	border-radius: 10px;
 	padding: 10px 10px 10px 10px;	
+	box-shadow: 2px 2px 2px rgba(0, 0, 0,0.3);
 }
 
-.sks{	
-	width: 47%;
+.right-item{	
+	width: 47%;	
 	color: white;
 	background-color: #7784E9;
 	float: right;
 	font-size: 50px;
 	border-radius: 10px;
 	padding: 10px 10px 10px 10px;	
+	box-shadow: 2px 2px 2px rgba(0, 0, 0,0.3);
 }

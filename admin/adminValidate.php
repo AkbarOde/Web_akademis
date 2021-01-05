@@ -11,7 +11,7 @@
 	if($row = $res->fetch_row()){
 		$_SESSION['logged-in'] = true;
 		$_SESSION['username'] = $username;
-		header('Location: admin_home_page.php');
+		header('Location: admin_home_page.php?page=dashboard');
 	}
 	else{
 		$_SESSION['salah'] = 'salah';
