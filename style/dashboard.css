@@ -40,7 +40,7 @@
 
 .ipk{	
 	width: 47%;	
-	background-color: green;
+	background-color: #7784E9;
 	color: white;
 	float: left;
 	font-size: 50px;
@@ -50,7 +50,8 @@
 
 .sks{	
 	width: 47%;
-	background-color: #FFFF;
+	color: white;
+	background-color: #7784E9;
 	float: right;
 	font-size: 50px;
 	border-radius: 10px;
