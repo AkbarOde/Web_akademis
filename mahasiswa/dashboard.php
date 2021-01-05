@@ -37,10 +37,10 @@
 ?>
 
 <div class="info">
-	<div class="ipk">
+	<div class="left-item">
 		<i class="fa fa-graduation-cap" aria-hidden="true"></i> IPK : <?php echo $ipk[0];?>
 	</div>
-	<div class="sks">
+	<div class="right-item">
 		<i class="fa fa-book" aria-hidden="true"></i>Jumlah SKS : <?php echo $ipk[1];?>
 	</div>
 </div>

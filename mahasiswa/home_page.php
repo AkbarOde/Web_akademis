@@ -29,12 +29,14 @@
 	<div class="container">
 		<div id="page-h" class="page-header">
 			<div class="page-logo">
-				<img class="logo" src="../assets/gadget.png"/>
+				<img class="logo" src="../assets/logo.png"/>
 			</div>
-			<a href="?page=dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
-	  		<a href="?page=dosen" >Daftar Dosen</a>	  			  	
-	  		<a href="?page=matkul">Daftar Mata Kuliah</a>
-	  		<a href="?page=nilai">Daftar Nilai</a>	  			  			  
+			<h3 class="menu-heading">Dashboard</h3>
+			<a href="?page=dashboard"><i class="fa fa-tachometer fa-icon" aria-hidden="true"></i>Dashboard</a>
+			<h3 class="menu-heading">Dosen</h3>
+	  		<a href="?page=dosen" ><i class="fa fa-user-o fa-icon" aria-hidden="true"></i>Daftar Dosen</a>	  			  			 <h3 class="menu-heading">Akademik</h3>
+	  		<a href="?page=matkul"><i class="fa fa-book fa-icon" aria-hidden="true"></i>Daftar Mata Kuliah</a>
+	  		<a href="?page=nilai"><i class="fa fa-graduation-cap fa-icon" aria-hidden="true"></i>Daftar Nilai</a>	  			  			  
 		</div>	
 		<div class="page-content">
 			<div class="content-header">
