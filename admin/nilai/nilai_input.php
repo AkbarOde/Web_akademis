@@ -6,15 +6,22 @@
 
 	include "../../db_connection.php";
 
-	$query = "INSERT INTO nilai VALUES ('$id', '$nim', '$nilai')";
+	$cek_query = "SELECT * FROM nilai WHERE ID_Matkul='$id' AND NIM='$nim'";
+	$result = mysqli_query($conn, $cek_query);
+		
+	$error = 1;
+	if (mysqli_num_rows($result) == 0) {
+		$query = "INSERT INTO nilai VALUES ('','$id', '$nim', '$nilai')";
 
-	$res = $conn->query($query);
-	mysqli_close($conn);
-	
-	if($res){
-		header("location:../admin_home_page.php?page=nilai&tingkat=".$tingkat."&detail=".$nim);		
+		$res = $conn->query($query);
+		mysqli_close($conn);
+		
+		if($res){
+			$error = 0;
+			header("location:../admin_home_page.php?page=nilai&tingkat=".$tingkat."&detail=".$nim);		
+		}		
 	}
-	else{		
-		header("location:../admin_home_page.php?page=nilai&tingkat=".$tingkat."&detail=".$nim."&status=error"); 	
-	}	
+	if($error == 1)
+		header("location:../admin_home_page.php?page=nilai&tingkat=".$tingkat."&detail=".$nim."&status=error");
+
 ?>
