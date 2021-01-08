@@ -4,9 +4,14 @@
 		echo $_GET['id'];
 		$id = $_GET['id'];	
 		$id_dosen = $_GET['dosen'];	
+		$id_mengajar = $_GET['mengajar'];	
 		
 		$sql = "DELETE FROM jadwal WHERE ID_Jadwal='$id'";
-		$res = $conn->query($sql);
+		$res = $conn->query($sql);		
+
+		 // Delete Mengajar
+        $sql = "DELETE FROM mengajar WHERE ID_Mengajar='$id_mengajar'";  
+        $res = $conn->query($sql);
 		mysqli_close($conn);
 	
 		if($res){		

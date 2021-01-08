@@ -101,7 +101,7 @@
 						</button>		        								
 		        	</td>
 		        	<td>
-		        		<a href='javascript:hapusDataJadwal("<?php echo $row['ID_Jadwal']?>", "<?php echo $row['ID_Dosen']?>")'>		        			
+		        		<a href='javascript:hapusDataJadwal("<?php echo $row['ID_Jadwal']?>", "<?php echo $row['ID_Dosen']?>", "<?php echo $row['ID_Mengajar']?>")'>		        			
 		        			<button class="button-delete">
 								<i class="fa fa-trash" aria-hidden="true"></i> Delete
 							</button>
