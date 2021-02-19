@@ -16,9 +16,9 @@ function hapusData(id, identifier){
     }
 }
 
-function hapusDataJadwal(id_jadwal, id_dosen, id_mengajar){    
+function hapusDataJadwal(id_jadwal, id_dosen, id_matkul){    
     if (confirm("Apakah anda yakin akan menghapus data ini?")){
-      window.location.href = 'jadwal/jadwal_mengajar_delete.php?id=' +id_jadwal+'&dosen='+id_dosen+'&mengajar='+id_mengajar;
+      window.location.href = 'jadwal/jadwal_mengajar_delete.php?id=' +id_jadwal+'&dosen='+id_dosen+'&matkul='+id_matkul;
     }
 	}
 

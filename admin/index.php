@@ -4,6 +4,11 @@
 	{
 		echo '<script>alert("Username atau Password yang dimasukan salah")</script>'; 
 	}
+
+	if(isset($_SESSION['kosong']))
+	{
+		echo '<script>alert("Username dan Password harus diisi")</script>'; 
+	}
 	// destroy the session
 	session_destroy();
 ?>
@@ -23,10 +28,10 @@
 			<div class="admin-login-form">
 				<form name="login" method="post" action="adminValidate.php">
 					<div>							
-						<input type="text" name="username" placeholder="Username" required>
+						<input type="text" name="username" placeholder="Username" >
 					</div>
 					<div>							
-						<input type="password" name="password" placeholder="Password" required>
+						<input type="password" name="password" placeholder="Password" >
 					</div>						
 					<div>
 				 		<input type="submit" name="submit" value="LOGIN">
