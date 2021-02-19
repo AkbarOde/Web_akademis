@@ -3,12 +3,12 @@
 	if(isset($_GET['nim'])){
 		$nim = $_GET['nim'];
 
-		$sql = "DELETE FROM mahasiswa WHERE NIM='$nim'";
+		$query = "DELETE FROM mahasiswa WHERE NIM='$nim'";
 		
-		if ($conn->query($sql) === TRUE) {
+		if ($conn->query($query) === TRUE) {
 		   	header("location:../admin_home_page.php?page=mahasiswa");
 		} else {
-		   	echo "Error: " . $sql . "<br>" . $conn->error;
+		   	echo "Error: " . $query . "<br>" . $conn->error;
 		}
 	}		
 ?>
