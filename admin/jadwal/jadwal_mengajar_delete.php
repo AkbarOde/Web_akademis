@@ -1,16 +1,15 @@
 <?php
 	include "../../db_connection.php";
-	if(isset($_GET['id'])){
-		echo $_GET['id'];
+	if(isset($_GET['id'])){		
 		$id = $_GET['id'];	
 		$id_dosen = $_GET['dosen'];	
-		$id_mengajar = $_GET['mengajar'];	
+		$id_matkul = $_GET['matkul'];	
 		
 		$sql = "DELETE FROM jadwal WHERE ID_Jadwal='$id'";
 		$res = $conn->query($sql);		
 
 		 // Delete Mengajar
-        $sql = "DELETE FROM mengajar WHERE ID_Mengajar='$id_mengajar'";  
+        $sql = "DELETE FROM mengajar WHERE ID_Matkul='$id_matkul' AND ID_Dosen ='$id_dosen'";  
         $res = $conn->query($sql);
 		mysqli_close($conn);
 	

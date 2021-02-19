@@ -13,14 +13,14 @@
 	if($j_masuk < $j_keluar){
 		include "../../db_connection.php";
 
-		$cek_query = "SELECT * FROM mengajar WHERE Kode_Matkul ='$id_matkul' AND Kode_Dosen = '$id_dosen'";
+		$cek_query = "SELECT * FROM mengajar WHERE ID_Matkul ='$id_matkul' AND ID_Dosen = '$id_dosen'";
 		$result = mysqli_query($conn, $cek_query);
 		
 		if (mysqli_num_rows($result) == 0) {				
-			$query = "INSERT INTO mengajar VALUES ('','$id_dosen', '$id_matkul')";
+			$query = "INSERT INTO mengajar VALUES ('$id_dosen', '$id_matkul')";
 			$res = $conn->query($query);
 
-			$query_jadwal = "INSERT INTO jadwal VALUES ('','$id_ruangan', '$id_matkul', '$hari', '$j_masuk', '$j_keluar')";
+			$query_jadwal = "INSERT INTO jadwal VALUES ('','$id_dosen', '$id_matkul', '$id_ruangan', '$hari', '$j_masuk', '$j_keluar')";
 			$res_jadwal = $conn->query($query_jadwal);
 			mysqli_close($conn);
 			

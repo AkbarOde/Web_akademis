@@ -70,12 +70,12 @@
 			}
 			
 			$sql = "SELECT * from dosen as d 
-						INNER JOIN mengajar as me ON d.ID_Dosen = ".$id_dosen."AND d.ID_Dosen = me.Kode_Dosen
-						INNER JOIN mata_kuliah as m ON m.ID_Matkul = me.Kode_Matkul
-    					INNER JOIN jadwal as j ON j.Kode_Matkul = me.Kode_Matkul 
-    					INNER JOIN ruangan as r ON r.ID_Ruangan = j.Kode_Ruangan
-
-						ORDER BY FIELD(j.Hari, 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu')";				
+						INNER JOIN mengajar as me ON d.ID_Dosen = ".$id_dosen." AND d.ID_Dosen = me.ID_Dosen
+						INNER JOIN mata_kuliah as m ON m.ID_Matkul = me.ID_Matkul
+						INNER JOIN jadwal as j ON j.ID_Matkul = me.ID_Matkul AND j.ID_Dosen = d.ID_Dosen
+						INNER JOIN ruangan as r ON r.ID_Ruangan = j.ID_Ruangan
+					
+						ORDER BY FIELD(j.Hari, 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu')";										
 						
 			$result = mysqli_query($conn, $sql);
 			$count = mysqli_num_rows($result);
@@ -101,7 +101,7 @@
 						</button>		        								
 		        	</td>
 		        	<td>
-		        		<a href='javascript:hapusDataJadwal("<?php echo $row['ID_Jadwal']?>", "<?php echo $row['ID_Dosen']?>", "<?php echo $row['ID_Mengajar']?>")'>		        			
+		        		<a href='javascript:hapusDataJadwal("<?php echo $row['ID_Jadwal']?>", "<?php echo $row['ID_Dosen']?>", "<?php echo $row['ID_Matkul']?>")'>		        			
 		        			<button class="button-delete">
 								<i class="fa fa-trash" aria-hidden="true"></i> Delete
 							</button>
