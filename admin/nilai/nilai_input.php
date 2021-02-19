@@ -11,7 +11,7 @@
 		
 	$error = 1;
 	if (mysqli_num_rows($result) == 0) {
-		$query = "INSERT INTO nilai VALUES ('','$id', '$nim', '$nilai')";
+		$query = "INSERT INTO nilai VALUES ('$id', '$nim', '$nilai')";
 
 		$res = $conn->query($query);
 		mysqli_close($conn);
