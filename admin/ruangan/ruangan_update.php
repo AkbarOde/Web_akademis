@@ -1,12 +1,11 @@
-<?php	
-	$old_id = $_POST['old_id'];
+<?php		
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];	
 	
 	echo $old_id;
 	include "../../db_connection.php";
 
-	$query = "UPDATE ruangan SET ID_Ruangan='$id', Nama_Ruangan='$nama' WHERE ID_Ruangan='$old_id'";	
+	$query = "UPDATE ruangan SET Nama_Ruangan='$nama' WHERE ID_Ruangan='$id'";	
 
 	$res = $conn->query($query);
 	mysqli_close($conn);

@@ -69,10 +69,9 @@
 					      <hr>
 					    </div>
 					    <div class="modal-body">
-					    	<form name="input" method="post" action="ruangan/ruangan_update.php">
-						      	<input type="hidden" name="old_id" value="<?php echo $row['ID_Ruangan']?>">
+					    	<form name="input" method="post" action="ruangan/ruangan_update.php">						      	
 								<label for="fid">ID Dosen</label>
-								<input type="text" id="fid" name="id" value="<?php echo $row['ID_Ruangan']?>" maxlength="7" required>
+								<input type="text" id="fid" name="id" value="<?php echo $row['ID_Ruangan']?>" maxlength="7" readonly>
 								<label for="fnama">Nama</label>
 								<input type="text" id="fnama" name="nama" value="<?php echo $row['Nama_Ruangan']?>" required>
 								<input type="submit" value="Update">
