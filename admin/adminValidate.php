@@ -3,7 +3,7 @@
 	$USERNAME = $_POST['username'];
 	$PASSWORD = $_POST['password'];
 
-	include "db_connection.php";
+	include "../config/db_connection.php";
 	$query = "SELECT * from admin where username='$USERNAME' and password_admin='$PASSWORD'";
 
 	$res = $conn->query($query);
