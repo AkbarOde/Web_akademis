@@ -5,7 +5,7 @@
 	$alamat = $_POST['alamat'];	
 	$tingkat = $_POST['tingkat'];	
 	
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "UPDATE mahasiswa SET NIM='$nim', Nama_Mhs='$nama', Tingkat='$tingkat', Alamat='$alamat' WHERE NIM='$old_nim'";	
 

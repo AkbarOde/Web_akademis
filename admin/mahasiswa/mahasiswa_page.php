@@ -1,13 +1,9 @@
-<!-- Check Status tambah data -->
+
 <?php
-	// if(!isset($_GET['page'])){
-	// 	include "../session_check.php";
-	// }
-	
 	if(isset($_GET['status'])){
 		echo '<script>alert("Input Data Gagal")</script>'; 
 	}
-	include "../db_connection.php";
+	include "../config/db_connection.php";
 	// Cek session
 	if(!isset($_SESSION['logged-in'])){		
 		header('Location: index.php');

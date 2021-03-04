@@ -5,7 +5,7 @@
 	$alamat = $_POST['alamat'];
 	$password = $_POST['password'];
 	
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "INSERT INTO mahasiswa VALUES ('$nim', '$nama', '$tingkat', '$password','$alamat')";
 
