@@ -1,5 +1,5 @@
 <?php
-	include "../db_connection.php";
+	include "../config/db_connection.php";
 
 	$sql = "SELECT * FROM mahasiswa";
 	$mahasiswa = mysqli_query($conn, $sql);

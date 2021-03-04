@@ -10,18 +10,16 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../style/homepage.css">
-		<link rel="stylesheet" href="../style/tabel.css">
-		<link rel="stylesheet" href="../style/dashboard.css">		
-		<link rel="stylesheet" href="../style/modal.css">
+		<link rel="stylesheet" href="../assets/style/homepage.css">
+		<link rel="stylesheet" href="../assets/style/tabel.css">
+		<link rel="stylesheet" href="../assets/style/dashboard.css">		
+		<link rel="stylesheet" href="../assets/style/modal.css">
 
 		<!-- Datatables -->		
 		<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
-		
-		<!-- <link href="../style/datatables.min.css" rel="stylesheet" /> -->
-		<script src="../js/jquery.min.js" type="text/javascript"></script>
-		<script src="../js/datatables.min.js"></script>
-		<!-- <script src="../js/datatables.min.js"></script>		 -->
+				
+		<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+		<script src="../assets/js/datatables.min.js"></script>		
 
 		<title>Admin</title>						
 	</head>
@@ -29,7 +27,7 @@
 	<div class="container">
 		<div id="page-h" class="page-header">
 			<div class="page-logo">
-				<img class="logo" src="../assets/logo.png"/>
+				<img class="logo" src="../assets/image/logo.png"/>
 			</div>
 			<h3 class="menu-heading">Dashboard</h3>
 			<a href="?page=dashboard"><i class="fa fa-tachometer fa-icon" aria-hidden="true"></i>Dashboard</a>
@@ -49,7 +47,7 @@
 		<div class="page-content">
 			<div class="content-header">
 				<span>Administrator</span>
-				<img src="../assets/admin2.png" class="icon" />
+				<img src="../assets/image/admin2.png" class="icon" />
 				<div class="admin-icon">
 				<a class="link" href="logout.php">										
 					<i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -104,7 +102,7 @@
   			aaSorting: []
 		})			
 	</script>
-	<script type="text/javascript" src="../js/delete_alert.js"></script>
-	<script type="text/javascript" src="../js/modal.js"></script>
+	<script type="text/javascript" src="../assets/js/delete_alert.js"></script>
+	<script type="text/javascript" src="../assets/js/modal.js"></script>
 	</body>
 </html>
