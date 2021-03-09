@@ -2,7 +2,7 @@
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];	
 	
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "INSERT INTO ruangan VALUES ('$id', '$nama')";
 

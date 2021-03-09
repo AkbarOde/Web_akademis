@@ -74,7 +74,7 @@
 							include "matkul/index.php";
 							break;
 						case "ruangan":
-							include "ruangan/ruangan_page.php";
+							include "ruangan/index.php";
 							break;	
 						case "nilai":
 							include "nilai/nilai_page.php";
