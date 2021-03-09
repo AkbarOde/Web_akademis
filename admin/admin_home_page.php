@@ -77,7 +77,7 @@
 							include "ruangan/index.php";
 							break;	
 						case "nilai":
-							include "nilai/nilai_page.php";
+							include "nilai/index.php";
 							break;											
 						case "jadwal_mengajar":
 							include "jadwal/jadwal_mengajar_page.php";

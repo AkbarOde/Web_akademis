@@ -4,12 +4,7 @@
 	$nilai = $_POST['nilai'];		
 	$tingkat = $_POST['tingkat'];		
 
-	echo $old_id;
-	echo $old_nim;
-	echo $nilai;
-	echo $tingkat;
-
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "UPDATE nilai SET Nilai='$nilai' WHERE ID_Matkul='$old_id' AND NIM='$old_nim'";	
 

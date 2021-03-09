@@ -4,7 +4,7 @@
 	$nilai = $_POST['nilai'];		
 	$tingkat = $_POST['tingkat'];
 
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$cek_query = "SELECT * FROM nilai WHERE ID_Matkul='$id' AND NIM='$nim'";
 	$result = mysqli_query($conn, $cek_query);
