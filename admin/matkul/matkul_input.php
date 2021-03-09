@@ -4,7 +4,7 @@
 	$sks = $_POST['sks'];	
 	$semester = $_POST['semester'];	
 	
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "INSERT INTO mata_kuliah VALUES ('$id', '$nama', '$sks', '$semester')";
 

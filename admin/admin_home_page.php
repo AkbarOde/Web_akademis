@@ -71,7 +71,7 @@
 							include "mahasiswa/index.php";
 							break;
 						case "matkul":
-							include "matkul/matkul_page.php";
+							include "matkul/index.php";
 							break;
 						case "ruangan":
 							include "ruangan/ruangan_page.php";

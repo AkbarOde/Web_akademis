@@ -6,7 +6,7 @@
 	$semester = $_POST['semester'];	
 	
 	echo $old_id;
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "UPDATE mata_kuliah SET ID_Matkul='$id', Nama_Matkul='$nama', SKS_Matkul='$sks', Semester = '$semester' WHERE ID_Matkul='$old_id'";	
 
