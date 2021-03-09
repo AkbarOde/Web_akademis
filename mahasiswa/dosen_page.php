@@ -19,11 +19,11 @@
 		</thead>
 		<!-- Kode untuk mengambil data dosen -->
 		<?php
-			include "../db_connection.php";
+			include "../config/db_connection.php";
 
 			$sql = "SELECT * from dosen as d
-					INNER JOIN mengajar as me ON d.ID_Dosen = me.Kode_Dosen
-    				INNER JOIN nilai as n ON n.ID_Matkul = me.Kode_Matkul AND n.NIM = ".$_SESSION['nim'];
+					INNER JOIN mengajar as me ON d.ID_Dosen = me.ID_Dosen
+    				INNER JOIN nilai as n ON n.ID_Matkul = me.ID_Matkul AND n.NIM = ".$_SESSION['nim'];
 
 
 			$result = mysqli_query($conn, $sql);
@@ -38,10 +38,7 @@
 		        </tr>
 		<?php							
 		    	}
-			} 
-			else {
-		    		echo "0 results";
-			}
+			} 			
 			mysqli_close($conn);
 		?>
 

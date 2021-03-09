@@ -5,7 +5,7 @@
 	// }	
 ?>
 
-<!-- Tabel Data Dosen -->
+<!-- Tabel Data Mata Kuliah -->
 <div class="tabel-page">
 	<div class="tabel-heading">
 		Daftar Mata Kuliah yang diambil
@@ -19,9 +19,9 @@
 				<th><h5>Semester</h5></th>						
 			</tr>
 		</thead>
-		<!-- Kode untuk mengambil data dosen -->
+		<!-- Kode untuk mengambil data matkul -->
 		<?php
-			include "../db_connection.php";
+			include "../config/db_connection.php";
 
 			$sql = "SELECT * FROM nilai as n
 					INNER JOIN mata_kuliah as mk ON n.ID_Matkul = mk.ID_Matkul AND n.NIM = ".$_SESSION['nim'];
@@ -32,7 +32,7 @@
 			if (mysqli_num_rows($result) > 0) {				
 		    	while($row = mysqli_fetch_assoc($result)) {		    	
 		?>
-				<!-- Menampilkan Data Dosen -->
+				<!-- Menampilkan Data Mata Kuliah -->
 		        <tr>
 		        	<td><?php echo $row["ID_Matkul"];?></td>
 		        	<td><?php echo $row["Nama_Matkul"];?></td>

@@ -1,11 +1,7 @@
 <!-- Check Status tambah data -->
 <?php
-	// if(!isset($_GET['page'])){
-	// 	include "../session_check.php";
-	// }	
-
 	// 	include
-	include "../db_connection.php";
+	include "../config/db_connection.php";
 	include "ipk.php";
 	// Get Data Nilai
 	$sql = "SELECT * FROM nilai as n  
@@ -18,18 +14,18 @@
 	$ipk = countIPK($result);
 		
 	// Untuk Mengecek Hari
-	$arr_hari = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+	$arr_hari = array("Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
 	$id_hari = date('w'); //gets day of week as number(0=sunday,1=monday...,6=sat)
 
 	$hari = "'".$arr_hari[$id_hari]."'";	
  	
 	// Pengambilan data jadwal hari ini							
 	$sql = "SELECT * FROM nilai as n
-	INNER JOIN jadwal as j ON n.NIM = ".$_SESSION['nim']." AND n.ID_Matkul = j.Kode_Matkul AND j.Hari = ".$hari."
-    INNER JOIN mata_kuliah as mk ON j.Kode_Matkul = mk.ID_Matkul
-    INNER JOIN mengajar as m ON mk.ID_Matkul = m.Kode_Matkul
-    INNER JOIN dosen as d ON d.ID_Dosen = m.Kode_Dosen
-    INNER JOIN ruangan as r ON r.ID_Ruangan = j.Kode_Ruangan
+	INNER JOIN jadwal as j ON n.NIM = ".$_SESSION['nim']." AND n.ID_Matkul = j.ID_Matkul AND j.Hari = ".$hari."
+    INNER JOIN mata_kuliah as mk ON j.ID_Matkul = mk.ID_Matkul
+    INNER JOIN mengajar as m ON mk.ID_Matkul = m.ID_Matkul
+    INNER JOIN dosen as d ON d.ID_Dosen = m.ID_Dosen
+    INNER JOIN ruangan as r ON r.ID_Ruangan = j.ID_Ruangan
 
     ORDER BY j.Jam_Masuk";
 

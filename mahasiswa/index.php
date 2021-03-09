@@ -13,12 +13,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Login Form</title>			
 		
-		<link rel="stylesheet" href="../style/login.css">
+		<link rel="stylesheet" href="../assets/style/login.css">
 	</head>
 	<body>						
 		<div class="login-container">
 			<div class="user-icon">
-				<img src="../assets/user.png" id="icon" alt="User Icon"/>
+				<img src="../assets/image/user.png" id="icon" alt="User Icon"/>
 			</div>
 			<div class="login-form">
 				<form name="login" method="post" action="mahasiswa_validate.php">

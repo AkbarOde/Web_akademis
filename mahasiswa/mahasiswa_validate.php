@@ -3,7 +3,7 @@
 	$NIM = $_POST['nim'];
 	$PASSWORD = $_POST['password'];
 
-	include "../db_connection.php";
+	include "../config/db_connection.php";
 	$query = "SELECT * from mahasiswa where NIM='$NIM' and Password='$PASSWORD'";
 
 	$res = $conn->query($query);

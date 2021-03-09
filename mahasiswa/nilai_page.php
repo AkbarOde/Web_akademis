@@ -1,16 +1,5 @@
 <?php	
-include "../db_connection.php";	
-// Get Data Mata Kuliah
-$sql_matkul = "SELECT * FROM mata_kuliah";	
-$result_matkul = mysqli_query($conn, $sql_matkul);
 
-// Get Data Nilai
-$sql = "SELECT * FROM nilai as n  
-		INNER JOIN mahasiswa as m ON m.NIM = ".$_SESSION['nim']." AND m.NIM = n.NIM
-		INNER JOIN mata_kuliah as mk ON mk.ID_Matkul = n.ID_Matkul
-		ORDER BY mk.Semester";	
-
-$result = mysqli_query($conn, $sql);
 ?>
 
 <div class="tabel-page">
@@ -27,7 +16,16 @@ $result = mysqli_query($conn, $sql);
 				<th><h5>Nilai</h5></th>													
 			</tr>
 		</thead>		
-		<?php						
+		<?php		
+		include "../config/db_connection.php";	
+
+		// Get Data Nilai
+		$sql = "SELECT * FROM nilai as n  
+				INNER JOIN mahasiswa as m ON m.NIM = ".$_SESSION['nim']." AND m.NIM = n.NIM
+				INNER JOIN mata_kuliah as mk ON mk.ID_Matkul = n.ID_Matkul
+				ORDER BY mk.Semester";	
+
+		$result = mysqli_query($conn, $sql);				
 		if (mysqli_num_rows($result) > 0) {
 					
 	    	while($row = mysqli_fetch_assoc($result)) {		    	
