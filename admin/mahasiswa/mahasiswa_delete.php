@@ -4,11 +4,13 @@
 		$nim = $_GET['nim'];
 
 		$query = "DELETE FROM mahasiswa WHERE NIM='$nim'";
+		$res = $conn->query($query);
 		
-		if ($conn->query($query) === TRUE) {
+		if ($conn->affected_rows > 0) {
 		   	header("location:../admin_home_page.php?page=mahasiswa");
-		} else {
-		   	echo "Error: " . $query . "<br>" . $conn->error;
+		} 
+		else {
+		    header("location:../admin_home_page.php?page=mahasiswa&status=error");
 		}
 	}		
 ?>

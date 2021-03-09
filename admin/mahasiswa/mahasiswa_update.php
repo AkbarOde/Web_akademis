@@ -1,5 +1,4 @@
-<?php	
-	$old_nim = $_POST['old_nim'];
+<?php		
 	$nim = $_POST['nim'];
 	$nama = $_POST['nama'];	
 	$alamat = $_POST['alamat'];	
@@ -7,12 +6,11 @@
 	
 	include "../../config/db_connection.php";
 
-	$query = "UPDATE mahasiswa SET NIM='$nim', Nama_Mhs='$nama', Tingkat='$tingkat', Alamat='$alamat' WHERE NIM='$old_nim'";	
+	$query = "UPDATE mahasiswa SET Nama_Mhs='$nama', Tingkat='$tingkat', Alamat='$alamat' WHERE NIM='$nim'";	
 
-	$res = $conn->query($query);
-	mysqli_close($conn);
-	
-	if($res){
+	$res = $conn->query($query);	
+		
+	if($conn->affected_rows > 0){
 		header("location:../admin_home_page.php?page=mahasiswa");		
 	}
 	else{		

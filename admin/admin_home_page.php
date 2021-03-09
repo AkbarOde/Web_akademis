@@ -65,10 +65,10 @@
 							include "dashboard.php";
 							break;
 						case "dosen":
-							include "dosen/dosen_page.php";
+							include "dosen/index.php";
 							break;						
 						case "mahasiswa":
-							include "mahasiswa/mahasiswa_page.php";
+							include "mahasiswa/index.php";
 							break;
 						case "matkul":
 							include "matkul/matkul_page.php";
