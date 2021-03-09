@@ -1,93 +1,39 @@
-<?php
-	$id_dosen = "'K0'";
+<?php	
+	$id_dosen = $_POST['dosen'];
+	$id_matkul = $_POST['matkul'];	
+	$id_ruangan = $_POST['ruangan'];	
+	$hari = $_POST['hari'];	
+	$j_masuk = $_POST['j_masuk'];	
+	$j_keluar = $_POST['j_keluar'];
+	
+	echo $j_masuk;
+	echo $j_keluar;
 
-	if(isset($_GET['dosen'])){
-		$id_dosen = $_GET['dosen'];
-	}
-?>
+	$error = 1;
+	if($j_masuk < $j_keluar){
+		include "../../config/db_connection.php";
 
-<div class="tabel-page">
-	 <div class="update-header">
-	 	<h2>Input Jadwal Mengajar</h2>
-      	<hr>
-      </div>
-     <div class="update-body">
-	 	<form name="input" method="post" action="jadwal/jadwal_m_input.php">
-	 		<!-- Data Dosen -->
-	      	<label for="fdosen">Dosen: <input list="dosen" name="dosen" type="text">
-			</label>
-			<datalist id="dosen">
-			<!-- Select Data Dosen -->
-			<?php
-			include "../db_connection.php";
+		$cek_query = "SELECT * FROM mengajar WHERE ID_Matkul ='$id_matkul' AND ID_Dosen = '$id_dosen'";
+		$result = mysqli_query($conn, $cek_query);
+		
+		if (mysqli_num_rows($result) == 0) {				
+			$query = "INSERT INTO mengajar VALUES ('$id_dosen', '$id_matkul')";
+			$res = $conn->query($query);
 
-			$sql = "SELECT * from dosen";
-			$result = mysqli_query($conn, $sql);
-			if (mysqli_num_rows($result) > 0) {				
-		    	while($row = mysqli_fetch_assoc($result)) {		    	
-			?>
-				<option value="<?php echo $row['ID_Dosen']?>">
-					<?php echo $row['Nama_Dosen']?>
-				</option>
-			<?php				
-		    	}
-			} 						
-			?>			 
-			</datalist>	
-
-			<!-- Data Mata Kuliah -->
-			<label for="fmatkul">Mata Kuliah: <input list="matkul" name="matkul" type="text">
-			</label>
-			<datalist id="matkul">
-			<!-- Select Data Mata Kuliah -->
-			<?php			
-			$sql = "SELECT * from mata_kuliah";
-			$result = mysqli_query($conn, $sql);
-			if (mysqli_num_rows($result) > 0) {				
-		    	while($row = mysqli_fetch_assoc($result)) {		    	
-			?>
-				<option value="<?php echo $row['ID_Matkul']?>">
-					<?php echo $row['Nama_Matkul']?>
-				</option>
-			<?php				
-		    	}
-			} 						
-			?>			 
-			</datalist>
-			<!-- Data Mata Ruangan -->
-			<label for="fruangan">Ruangan: <input list="ruangan" name="ruangan" type="text">
-			</label>
-			<datalist id="ruangan">
-			<!-- Select Data Mata Kuliah -->
-			<?php			
-			$sql = "SELECT * from ruangan";
-			$result = mysqli_query($conn, $sql);
-			if (mysqli_num_rows($result) > 0) {				
-		    	while($row = mysqli_fetch_assoc($result)) {		    	
-			?>
-				<option value="<?php echo $row['ID_Ruangan']?>">
-					<?php echo $row['Nama_Ruangan']?>
-				</option>
-			<?php				
-		    	}
-			} 						
-			?>			 
-			</datalist>		
-
-			<!-- Data Mata Hari -->
-			<label for="fhari">Hari: <input list="hari" name="hari" type="text">
-			</label>
-			<datalist id="hari">			
-				<option value="Senin"></option>
-				<option value="Selasa"></option>
-				<option value="Rabu"></option>
-				<option value="Kamis"></option>
-				<option value="Jumat"></option>
-				<option value="Sabtu"></option>					
-			</datalist>
-
+			$query_jadwal = "INSERT INTO jadwal VALUES ('','$id_dosen', '$id_matkul', '$id_ruangan', '$hari', '$j_masuk', '$j_keluar')";
+			$res_jadwal = $conn->query($query_jadwal);
+			mysqli_close($conn);
 			
-			<input type="submit" value="Input">
-		</form>
-	</div>
-</div>
+			echo $res;
+			echo $res_jadwal;
+			
+			if($res_jadwal AND $res){
+				$error = 0;
+				header("location:../admin_home_page.php?page=jadwal_mengajar");		
+			}				
+		}				
+	}	
+	if($error == 1)
+		header("location:../admin_home_page.php?page=jadwal_mengajar&status=error"); 		
+	
+?>

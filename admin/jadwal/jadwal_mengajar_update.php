@@ -9,7 +9,7 @@
 	echo $old_id;
 	echo $ruangan;
 	echo $hari;
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "UPDATE jadwal SET ID_Ruangan='$ruangan', Hari='$hari', Jam_Masuk ='$j_masuk', Jam_Keluar ='$j_keluar' WHERE ID_Jadwal='$old_id'";	
 

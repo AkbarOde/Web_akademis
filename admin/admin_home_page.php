@@ -80,11 +80,8 @@
 							include "nilai/index.php";
 							break;											
 						case "jadwal_mengajar":
-							include "jadwal/jadwal_mengajar_page.php";
-							break;						
-						case "jadwal_input":
-							include "jadwal/jadwal_mengajar_input.php";
-							break;
+							include "jadwal/index.php";
+							break;												
 					}
 				}
 			?>
