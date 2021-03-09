@@ -3,8 +3,7 @@
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];	
 	
-	echo $old_id;
-	include "../../db_connection.php";
+	include "../../config/db_connection.php";
 
 	$query = "UPDATE dosen SET ID_Dosen='$id', Nama_Dosen='$nama' WHERE ID_Dosen='$old_id'";	
 
