@@ -4,7 +4,7 @@
 	/*Konfigurasi MySQL*/
 	$user_db = "root";
 	$pass_db = "";
-	$db_name = "db_webakademis_test";
+	$db_name = "db_webakademis_php";
 
 	// Create connection
 	$conn = new mysqli($hostname, $user_db, $pass_db);
