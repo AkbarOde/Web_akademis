@@ -8,9 +8,9 @@
 		$sql = "DELETE FROM dosen WHERE ID_Dosen='$id'";
 		
 		if ($conn->query($sql) === TRUE) {
-		   	header("location:../admin_home_page.php?page=dosen");
+			header("location:../admin_home_page.php?page=dosen");
 		} else {
-		   	echo "Error: " . $sql . "<br>" . $conn->error;
+			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 	}		
 ?>

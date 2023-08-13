@@ -114,9 +114,9 @@
 					<!-- Modal content -->
 					<div class="modal-content">
 					    <div class="modal-header">
-					      <span class="close" id="close<?php echo $i?>">&times;</span>
-					      <h2>Update Jadwal Mengajar</h2>
-					      <hr>
+					    	<span class="close" id="close<?php echo $i?>">&times;</span>
+					    	<h2>Update Jadwal Mengajar</h2>
+					    	<hr>
 					    </div>
 					    <div class="modal-body">
 					    	<form name="input" method="post" action="jadwal/jadwal_mengajar_update.php">
@@ -151,7 +151,7 @@
 									if (mysqli_num_rows($result_r) > 0) {				
 								    	while($row_r = mysqli_fetch_assoc($result_r)) {		    	
 									?>
-										<option value="<?php echo $row['ID_Ruangan']?>">
+										<option value="<?php echo $row_r['ID_Ruangan']?>">
 											<?php echo $row_r['Nama_Ruangan']?>
 										</option>
 									<?php				
@@ -196,15 +196,15 @@
 
 <!-- Modal Input Data -->
 <div id="myModal0" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
+<!-- Modal content -->
+	<div class="modal-content">
     <div class="modal-header">
-      <span class="close" id="close0">&times;</span>
-      <h2>Input Jadwal Mengajar</h2>
-      <hr>
+    	<span class="close" id="close0">&times;</span>
+    	<h2>Input Jadwal Mengajar</h2>
+    <hr>
     </div>
     <div class="modal-body">
-     <form name="input" method="post" action="jadwal/jadwal_mengajar_input.php">
+    <form name="input" method="post" action="jadwal/jadwal_mengajar_input.php">
 		<!-- Data Dosen -->
       	<label for="fdosen">Dosen: <input list="dosen" name="dosen" type="text">
 		</label>

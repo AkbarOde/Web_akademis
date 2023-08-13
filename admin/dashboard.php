@@ -32,7 +32,7 @@
 	if (mysqli_num_rows($ruangan) > 0) {
 		$jumlah_r = mysqli_num_rows($ruangan);
 	}
-    	
+
 ?>	   
 <div class="item dosen">
 	<div class="icon-user">

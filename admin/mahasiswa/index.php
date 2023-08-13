@@ -63,9 +63,9 @@
 					<!-- Modal content -->
 					<div class="modal-content">
 					    <div class="modal-header">
-					      <span class="close" id="close<?php echo $i?>">&times;</span>
-					      <h2>Update Data Mahasiswa</h2>
-					      <hr>
+					    	<span class="close" id="close<?php echo $i?>">&times;</span>
+					    	<h2>Update Data Mahasiswa</h2>
+					    	<hr>
 					    </div>
 					    <div class="modal-body">
 					    	<form name="input" method="post" action="mahasiswa/mahasiswa_update.php">						      	
